@@ -1,6 +1,337 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "playground": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/playground",
+      "sourceRoot": "projects/playground/src",
+      "prefix": "yl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/playground",
+            "index": "projects/playground/src/index.html",
+            "main": "projects/playground/src/main.ts",
+            "polyfills": "projects/playground/src/polyfills.ts",
+            "tsConfig": "projects/playground/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/playground/src/favicon.ico",
+              "projects/playground/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/playground/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/playground/src/environments/environment.ts",
+                  "with": "projects/playground/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "playground:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "playground:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "playground:build"
+          }
+        }
+      }
+    },
+    "structure-manipulation": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/structure-manipulation",
+      "sourceRoot": "projects/structure-manipulation/src",
+      "prefix": "yl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/structure-manipulation",
+            "index": "projects/structure-manipulation/src/index.html",
+            "main": "projects/structure-manipulation/src/main.ts",
+            "polyfills": "projects/structure-manipulation/src/polyfills.ts",
+            "tsConfig": "projects/structure-manipulation/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/structure-manipulation/src/favicon.ico",
+              "projects/structure-manipulation/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/structure-manipulation/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/structure-manipulation/src/environments/environment.ts",
+                  "with": "projects/structure-manipulation/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "structure-manipulation:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "structure-manipulation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "structure-manipulation:build"
+          }
+        }
+      }
+    },
+    "teleportation": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/teleportation",
+      "sourceRoot": "projects/teleportation/src",
+      "prefix": "yl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/teleportation",
+            "index": "projects/teleportation/src/index.html",
+            "main": "projects/teleportation/src/main.ts",
+            "polyfills": "projects/teleportation/src/polyfills.ts",
+            "tsConfig": "projects/teleportation/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/teleportation/src/favicon.ico",
+              "projects/teleportation/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/teleportation/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/teleportation/src/environments/environment.ts",
+                  "with": "projects/teleportation/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "teleportation:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "teleportation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "teleportation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/teleportation/src/test.ts",
+            "polyfills": "projects/teleportation/src/polyfills.ts",
+            "tsConfig": "projects/teleportation/tsconfig.spec.json",
+            "karmaConfig": "projects/teleportation/karma.conf.js",
+            "assets": [
+              "projects/teleportation/src/favicon.ico",
+              "projects/teleportation/src/assets"
+            ],
+            "styles": [
+              "projects/teleportation/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/teleportation/tsconfig.app.json",
+              "projects/teleportation/tsconfig.spec.json",
+              "projects/teleportation/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/teleportation/e2e/protractor.conf.js",
+            "devServerTarget": "teleportation:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "teleportation:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "playground"
 }

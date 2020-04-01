@@ -49,6 +49,7 @@
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
+    "no-debugger": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
@@ -59,6 +60,7 @@
       true,
       "single"
     ],
+
     "trailing-comma": false,
     "component-class-suffix": true,
     "contextual-lifecycle": true,
